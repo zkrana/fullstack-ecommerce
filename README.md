@@ -32,3 +32,100 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+
+
+
+## Package Installation
+
+First Step: npx create-next-app@latest my-app --typescript --tailwind --eslint
+
+Second Step: npx shadcn-ui@latest init
+
+Third Step: npx shadcn-ui@latest add button
+
+Fourth Step: npm install @clerk/nextjs
+
+## Now Follow this link for authetication
+
+https://clerk.com/docs/nextjs/get-started-with-nextjs
+
+
+## wrap entire laout jsx into <ClerkProvider> Like this:
+    <ClerkProvider>
+        <html lang="en">
+          <body className={inter.className}>{children}</body>
+        </html>
+    </ClerkProvider>
+
+## Add middleware from clerk docs site 
+ and copy middleware code and paste it on middleware page
+
+
+## Craete auth folder to app folder
+Like: (auth) => routes => sign-up => [[ ...sign-up ]]  => page.tsx
+
+cope code from clerk docs to page.tsx page.
+
+Do it for sign in also
+
+Like: (auth) => routes => sign-in => [[ ...sign-in ]]  => page.tsx
+
+cope code from clerk docs to page.tsx page.
+
+## Update your environment variables
+
+Next, add environment variables for the signIn , signUp and afterSignUp , afterSignIn paths:
+
+==> Now your sign in and sign up authentication is ready, If you want to make it center 
+create a layout page for all group page like:
+(routes) => layout.tsx it will cover all pages under routes folder. Now you can control your all page layout. Like this
+
+export default function AuthLayout({
+    children
+}:{
+    children: React.ReactNode
+}) {
+    return(
+        <div className=" w-full h-full flex justify-center items-center">
+            {children}
+        </div>
+    )
+}
+
+## Now try to login or sign up
+
+after sign in by google or your email it will redirect you to root folder page.tsx. It's your admin main page.
+
+## Add userbutton in after login dahsboard on your root pag, Like:
+        <UserButton afterSignOutUrl="/"/>
+
+## Now create Modal for adding store on dashboard
+
+ Step 1: npx shadcn-ui@latest add dialog
+for adding dialog popup.
+
+## Now create your Modal in Components => ui folder;
+
+## Now go to your root page and this Modal here.
+
+## Use zustand for global state management =>  npm install zustand
+
+## After Installaing Create a folder name hooks and then create a file name use-store-modal.tsx
+Now work on this page.
+
+## After completing this page craete a folder namee  modals in components folder and the create a file name store-modal.tsx
+
+
+## after completinf this page create a folder in main folder name providers then create file name modal-provider.tsx
+
+## After completing this page import modal provider in app layout.tsx page.
+
+
+## Now add Modal by import modal to the root page.tsx page.
+
+
+
+
