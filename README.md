@@ -126,6 +126,80 @@ Now work on this page.
 
 ## Now add Modal by import modal to the root page.tsx page.
 
+## Now add form from shadcn by using this command::: npx shadcn-ui@latest add form
+
+## Now add input from shadcn by using this command::: npx shadcn-ui@latest add input
+
+## Now create form schema on store-modal.tsx page
+Now when you work on this page please make sure you have this packe installed in package.json => @hookform/resolvers and react-hook-form dependencies.
+
+after completing the dynamic form then Install prisma to sent data to db
+
+## Install Prisma Dev dependencies: npm i -D prisma
+
+## Install Prisma Dev dependencies: npm install @prisma/client
+
+## Now initialize prisma by this command: npm prisma init
+
+## Now create a prisma page in lib folder.
+
+## After complete prisma then create a account on planetscale website: https://planetscale.com
+create Databasae there and add prisma connect in env file.
+
+Now Add this code from planetscale to prisma.schema page 
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  relationMode = "prisma"
+
+  ## Now create data table on db at prisma.schema page, Like:
+
+  model Store{
+  id          String @id @default(uuid())
+  name        String
+  userId      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+## Now generate command for generate them on planet scale: npx prisma generate
+
+## Check npw db string si successfully connecctedd or not by this command: npx prisma db push 
+
+NB: If you get any error please check your database url on env file.
+
+
+## It's time to call PAI route to send date to the databse. Go to App folder create a folder name api => create another folder name stores => create a file name route.ts.
+
+after completing this page go to component folder to store modal page now create state for manage user request handle.Like:
+    const [loading, setLoading] = useState(false)
+
+after apply it on button and input Now install a package for axios
+
+## Install axios: npm i axios
+
+## Now complete onSubmit () on store modal page.
+
+after completing this
+
+## Install toast package : npm i react-hot-toast
+
+## Now create a toast provider page on prividers folder
+after complete this page
+## Now add toaster in app layout page.
+now you can add toat message
+
+## Now add toast to the store-modal page
+
+
+
+
+
+
+
+
+
+
+
 
 
 
