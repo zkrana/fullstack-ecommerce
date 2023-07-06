@@ -191,6 +191,49 @@ now you can add toat message
 ## Now add toast to the store-modal page
 
 
+## It's time to create your Dashboard.
+create a folder name (dashboard) on app folder, Now create another folder name [storeId] it's a convention of NEXT 13, it will automatically take store id.
+Now create a layout.tsx for layout of all store.
+
+After completing layout page Nopw craete
+
+## (routes) folder to storeId folder then create page.tsx
+
+Nopw write the basic code of page.tsx page.
+
+## Now create authenticated layout for root folder name layout.tsx
+
+Now create (routes) folder on root folder then move page.tsx to the routes folder.
+
+
+## After completing them, Now: Reset your prisma mysql database: npx prisma migrate reset
+## Again command: npx prisma generate
+## Again command: npx prisma db push
+
+## Now go to componennts  => Modal =>Store modal fix this : 
+ window.location.assign(`/${response.data.id}`);
+
+## Now go to dashboard page to Check active store name by  passing props
+
+
+## It's time to work with navigation:
+
+Go to dashboard layout for creating navbar.
+
+## create navbar on components in folder below ui now create navbar.tsx page.
+
+after basic header is complete let's create a MainNav route on components.
+
+## create MainNav on components in folder below ui now create main-nav.tsx page.
+
+## Now create a store switcher as a combo box by this command: npx shadcn-ui@latest add popover  and this: npx shadcn-ui@latest add command
+
+## Now create store switcher in component store-switcher.tsx
+
+
+
+
+
 
 
 
