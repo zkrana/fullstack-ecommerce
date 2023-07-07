@@ -229,6 +229,19 @@ after basic header is complete let's create a MainNav route on components.
 ## Now create a store switcher as a combo box by this command: npx shadcn-ui@latest add popover  and this: npx shadcn-ui@latest add command
 
 ## Now create store switcher in component store-switcher.tsx
+ after completing switcher page now create 
+
+ ## Create a folder name settings in dashboard routes folder name page.tsx
+
+ ## Now create a folder to the settings folder name components and then create a file name settings-from.tsx
+
+
+
+
+ ## Run this command:
+
+ npx shadcn-ui@latest add separator
+
 
 
 
