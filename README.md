@@ -235,14 +235,11 @@ after basic header is complete let's create a MainNav route on components.
 
  ## Now create a folder to the settings folder name components and then create a file name settings-from.tsx
 
+## Let's Create heading.tsx page in components ui folder.
 
+## now Run this command: npx shadcn-ui@latest add separator
 
-
- ## Run this command:
-
- npx shadcn-ui@latest add separator
-
-
+## Go to settings-from.tsx this page, make form schema funciton
 
 
 
