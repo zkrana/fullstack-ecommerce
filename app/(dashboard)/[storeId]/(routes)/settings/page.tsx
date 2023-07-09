@@ -3,7 +3,7 @@ import { auth } from "@clerk/nextjs";
 
 import prismadb from "@/lib/prismadb";
 
-import { Settingsform } from "./components/settings-form";
+import { SettingsForm } from "./components/settings-form";
 
 const SettingsPage = async ({
   params
@@ -30,7 +30,7 @@ const SettingsPage = async ({
   return ( 
     <div className="flex-col">
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <Settingsform initialData={store} />
+        <SettingsForm initialData={store} />
       </div>
     </div>
   );
