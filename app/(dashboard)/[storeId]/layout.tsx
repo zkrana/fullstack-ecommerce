@@ -34,7 +34,7 @@ export default async function DashboardLayout({
 
 // If Store does not exist
     if(!store){
-        redirect('/')
+        redirect('/');
     }
 
 // Now we confirmed that you have a store, It's time to render this return with children, and children will be (routes) => page.tsx page. Finally we came to the store.

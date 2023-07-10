@@ -241,9 +241,31 @@ after basic header is complete let's create a MainNav route on components.
 
 ## Go to settings-from.tsx this page, make form schema funciton
 
+## Create [storeId] folder in API => stores folder. Now create route.ts for indivisual id.
+Create 2 routes first one is patch for update the store.
+ Second id delete for delete store.
 
+After completing this, Now go to settings-form page for update the actual delete and update operation
 
+## now create a alert-modal.tsx in components => modals folder.
 
+add this on settings form page as a component <AlertModal />
+
+After this add onDelete method to perform delete operation on settings form page.
+
+After Alert Modal is done
+
+## Command for alert: npx shadcn-ui@latest add alert
+
+## now create a page api-alert.tsx to the components => ui folder
+
+## Command for alert: npx shadcn-ui@latest add badge
+
+## create a hooks in hooks folder name use-origin.tsx
+
+## After completing this craete billboard db table in prisma.schema file
+
+## After adding billboard schema now command: npx prisma generate after that another command: npx prisma db push
 
 
 

@@ -3,7 +3,7 @@ import { auth } from "@clerk/nextjs";
 
 import prismadb from "@/lib/prismadb";
 
-import { SettingsForm } from "./components/settings-form";
+import { SettingsForm } from "@/app/(dashboard)/[storeId]/(routes)/settings/components/settings-form";
 
 const SettingsPage = async ({
   params

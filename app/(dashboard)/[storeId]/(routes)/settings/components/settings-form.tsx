@@ -1,9 +1,13 @@
 "use client"
-import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+
+import * as z from "zod"
+import axios from "axios"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
+import { toast } from "react-hot-toast"
 import { Trash } from "lucide-react"
 import { Store } from "@prisma/client"
+import { useParams, useRouter } from "next/navigation"
 import { useState } from "react"
 
 import { Input } from "@/components/ui/input"
@@ -18,28 +22,32 @@ import {
 } from "@/components/ui/form"
 import { Separator } from "@/components/ui/separator"
 import { Heading } from "@/components/ui/heading"
+import { AlertModal } from "@/components/modals/alert-modal"
+import { ApiAlert } from "@/components/ui/api-alert"
+import { useOrigin } from "@/hooks/use-origin"
 
 // Form Schema
 const formSchema = z.object({
   name: z.string().min(2),
 });
 
+// Create type for settingsFormvalues for not create it every single time, after this we can reuse settingsFormvalues.
+
+type SettingsFormValues = z.infer<typeof formSchema>
 
 interface SettingsFormProps {
   initialData: Store;
 };
 
 
-// Create type for settingsFormvalues for not create it every single time, after this we can reuse settingsFormvalues.
-
-type SettingsFormValues = z.infer<typeof formSchema>
-
-
-
 export const SettingsForm: React.FC<SettingsFormProps> = ({
     initialData
   }) => {
     // AFter resolver create state
+
+    const origin = useOrigin();
+    const params = useParams();
+    const router = useRouter();
 
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -53,17 +61,48 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
 
         //initialData is comes from settings page store where we pass initailData
         defaultValues: initialData
-        // Now create state above
         
       });
 
     // Now create onSubmit function to perform delete action
     
     const onSubmit = async (data: SettingsFormValues) => {
-        console.log(data);
-    }
+        try {
+          setLoading(true);
+          await axios.patch(`/api/stores/${params.storeId}`, data);
+          router.refresh();
+          toast.success('Store updated.');
+
+        } catch (error: any) {
+          toast.error('Something went wrong.');
+        } finally {
+          setLoading(false);
+        }
+        // Create Routes API for submit this form
+    };
 
     // now create form markup after separator
+
+    // Now create onSubmit function to perform delete action
+    
+    const onDelete = async () => {
+
+        try{
+            setLoading(true);
+            axios.delete(`/api/stores/${params.storeId}`);
+            router.refresh();
+            router.push("/");
+            toast.success("Store deleted successfully.");
+        }
+        catch (error){
+            toast.error("Make sure you removed all product and categories first.")
+        }
+        finally{
+            setLoading(false);
+            setOpen(false);
+        }
+
+    }
 
 
     return ( 
@@ -71,6 +110,12 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
         // Wrap them with fragment
 
         <>
+        <AlertModal
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        onConfirm={onDelete}
+        loading={loading}
+        />
             <div className="flex items-center justify-between">
                 {/* This components except two props, This components will be reusable */}
                 <Heading title="Store settings" description="Manage store preferences" />
@@ -79,7 +124,10 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
                     disabled={loading}
                     variant="destructive"
                     size="sm"
-                    onClick={() => {}}
+                    onClick={() => setOpen(true)}
+
+                    // Now create API
+
                     >
                     <Trash className="w-4 h-4" />
                 </Button>
@@ -108,6 +156,12 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
                 </form>
             </Form>
             <Separator />
+            <ApiAlert 
+                title="NEXT_PUBLIC_API_URL" 
+                variant="public" 
+                description={`${origin}/api/${params.storeId}`}
+            />
+            {/* Now go to again api alert */}
         </>
      );
 }
