@@ -267,8 +267,43 @@ After Alert Modal is done
 
 ## After adding billboard schema now command: npx prisma generate after that another command: npx prisma db push
 
+## Now create a folder name biilboards in dahsboard => storeId => routes folder
+ Now create a page.tsx here. After basic file structure is ready 
 
+ ## create folder name components in billboards folder then create a file name client.tsx
 
+## Now create a [billboardsId] in billboards folder name page.tsx.
+
+ This structure means it's a server components
+ const BillboardPage = async ({
+    params
+}: {
+    params: {billboardId: string}
+}) => 
+
+## Now create a components folder in billboardId folder and then copy settings-from page to here
+and change name to billboard-form.tsx
+
+## Create a account on cloudinary.com
+
+## create a imageUpload file in components -> ui folder
+
+## Add this package : npm install next-cloudinary
+
+## add this on env file =>  NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME="<Your Cloud Name>"
+
+## Go to cloudinary settings click upload => click add upload preset and make sign in mode => usigned. 
+Copy the preset name and paste it on impage-upload page  uploadPreset
+      <CldUploadWidget onUpload={onUpload} uploadPreset="mifs8ve0">
+      here
+
+## After billboad-from complete if you get error on upload image
+
+add this on next.config.js
+
+  images: {
+    domains: ["res.cloudinary.com"]
+  }
 
 
 

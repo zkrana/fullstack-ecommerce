@@ -45,7 +45,9 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
   }) => {
     // AFter resolver create state
 
+    // For ignore hydration error use const origin = useOrigin();
     const origin = useOrigin();
+    
     const params = useParams();
     const router = useRouter();
 
