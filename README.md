@@ -305,11 +305,17 @@ add this on next.config.js
     domains: ["res.cloudinary.com"]
   }
 
+## Now create a folder a name [storeId] in api then create another folder billboards in [storeID] folder then a create a file name route.ts
+
+ After completing api
+
+ ## Create a bill board routes folder name [billboardId] in api => [storeId] => billboards folder 
 
 
+and copy the storeId => route file and paste on billboardId route file.
 
+ after completing billboard routes go to = >
 
-
-
+## Go to billboards => page.tsx
 
 
