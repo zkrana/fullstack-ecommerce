@@ -317,5 +317,14 @@ and copy the storeId => route file and paste on billboardId route file.
  after completing billboard routes go to = >
 
 ## Go to billboards => page.tsx
+After getting all billboard number and showed it on billboard title;
+
+## Use command: npx shadcn-ui@latest add table and this dependency for this command: npm install @tanstack/react-table
+
+now create page on billboards => components name column.tsx and copy column.tsx file form this link: https://ui.shadcn.com/docs/components/data-table
+
+Now make column.tsx as your need
+
+
 
 
