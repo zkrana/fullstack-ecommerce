@@ -2,15 +2,15 @@
 
 import { ColumnDef } from "@tanstack/react-table"
 
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
-export type BillboadColumn = {
+import { CellAction } from "./cell-action"
+
+export type BillboardColumn = {
   id: string
-  label: string
-  CreatedAt: string
+  label: string;
+  createdAt: string;
 }
 
-export const columns: ColumnDef<BillboadColumn>[] = [
+export const columns: ColumnDef<BillboardColumn>[] = [
   {
     accessorKey: "label",
     header: "Label",
@@ -20,7 +20,7 @@ export const columns: ColumnDef<BillboadColumn>[] = [
     header: "Date",
   },
   {
-    accessorKey: "amount",
-    header: "Amount",
+    id: "actions",
+    cell: ({ row }) => <CellAction data={row.original} />
   },
-]
+];

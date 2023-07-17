@@ -326,5 +326,10 @@ now create page on billboards => components name column.tsx and copy column.tsx 
 Now make column.tsx as your need
 
 
+## Work on BillboardClient page and install a package: npm i date-fns
 
+## now create page on components => ui => name data-table.tsx and copy column.tsx file form this link: https://ui.shadcn.com/docs/components/data-table
+Now add this page on BillboardClient page. 
 
+## Command: npx shadcn-ui@latest add dropdown-menu
+## create a page on components => ui =>  name: api-list.tsx 
