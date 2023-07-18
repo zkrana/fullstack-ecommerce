@@ -24,8 +24,14 @@ import prismadb from "@/lib/prismadb";
     return ( 
         <div className="border-b">
           <div className="flex h-16 items-center px-4">
+            
+            {/* Store Switcher */}
             <StoreSwitcher items={stores} />
+
+            {/* Main Navigation */}
             <MainNav className="mx-6" />
+
+            {/* User Profile  */}
             <div className="ml-auto flex items-center space-x-4">
               <UserButton afterSignOutUrl="/" />
             </div>
