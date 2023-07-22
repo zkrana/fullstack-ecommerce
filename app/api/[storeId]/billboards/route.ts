@@ -3,8 +3,6 @@ import { auth } from '@clerk/nextjs';
 
 import prismadb from '@/lib/prismadb';
  
-// Create BIllboard
-
 export async function POST(
   req: Request,
   { params }: { params: { storeId: string } }
@@ -57,8 +55,6 @@ export async function POST(
     return new NextResponse("Internal error", { status: 500 });
   }
 };
-
-// Get BIllboard
 
 export async function GET(
   req: Request,
