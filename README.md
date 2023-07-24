@@ -352,3 +352,9 @@ Now add this page on BillboardClient page.
 
 ## Command: npx shadcn-ui@latest add dropdown-menu
 ## create a page on components => ui =>  name: api-list.tsx 
+after completing api then go to prisma.schema and add categoris also make relation with billboard and store with this categories.
+
+## Then run this command: npx prisma db push
+
+## Now copy full billboard folder on dashboard => routes rename it with categories
+ Now rename billboard page to CategoriesPage and change other
