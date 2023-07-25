@@ -391,3 +391,5 @@ Now rename sizes page to OrdersPage and and delete cell-action and [sizeid] no n
 
 ## Let's go to t create main store
 
+## command: npm i stripe
+
