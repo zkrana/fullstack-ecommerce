@@ -2,40 +2,37 @@ import { format } from "date-fns";
 
 import prismadb from "@/lib/prismadb";
 
-import { CategoryColumn } from "./components/columns"
-import { CategoriesClient } from "./components/client";
+import { SizeColumn } from "./components/columns"
+import { SizesClient } from "./components/client";
 
-const CategoriesPage = async ({
+const SizesPage = async ({
   params
 }: {
   params: { storeId: string }
 }) => {
-  const categories = await prismadb.category.findMany({
+  const sizes = await prismadb.size.findMany({
     where: {
       storeId: params.storeId
-    },
-    include: {
-      billboard: true,
     },
     orderBy: {
       createdAt: 'desc'
     }
   });
 
-  const formattedCategories: CategoryColumn[] = categories.map((item) => ({
+  const formattedSizes: SizeColumn[] = sizes.map((item) => ({
     id: item.id,
     name: item.name,
-    billboardLabel: item.billboard.label,
+    value: item.value,
     createdAt: format(item.createdAt, 'MMMM do, yyyy'),
   }));
 
   return (
     <div className="flex-col">
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <CategoriesClient data={formattedCategories} />
+        <SizesClient data={formattedSizes} />
       </div>
     </div>
   );
 };
 
-export default CategoriesPage;
+export default SizesPage;

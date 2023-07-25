@@ -357,4 +357,37 @@ after completing api then go to prisma.schema and add categoris also make relati
 ## Then run this command: npx prisma db push
 
 ## Now copy full billboard folder on dashboard => routes rename it with categories
- Now rename billboard page to CategoriesPage and change other
+ Now rename billboard page to CategoriesPage and change other Also do it on API folder to create categories api
+
+ ## Now Add size schema on prisma file:
+
+ ## Then run this command: npx prisma generate and npx prisma db push
+
+ ## Now copy full billboard folder on dashboard => routes rename it with sizes
+ Now rename billboard page to SizesPage and change other Also do it on API folder to create sizes api
+
+## Now Add color schema on prisma file:
+
+## Then run this command: npx prisma generate and npx prisma db push
+
+## Now copy full sizes folder on dashboard => routes rename it with colors
+Now rename sizes page to ColorsPage and change other Also do it on API folder to create colors api
+
+## Now Add products and image schema on prisma file:
+ 
+## Then run this command: npx prisma generate and npx prisma db push
+
+## Now copy full sizes folder on dashboard => routes rename it with products
+Now rename products page to ProductsPage and change other Also do it on API folder to create products api
+
+## Run this command: npx shadcn-ui@latest add checkbox
+
+
+## Now Add order and orderitem schema on prisma file:
+## Then run this command: npx prisma generate and npx prisma db push
+
+## Now copy full sizes folder on dashboard => routes rename it with orders
+Now rename sizes page to OrdersPage and and delete cell-action and [sizeid] no need it and also no need to add api.
+
+## Let's go to t create main store
+
